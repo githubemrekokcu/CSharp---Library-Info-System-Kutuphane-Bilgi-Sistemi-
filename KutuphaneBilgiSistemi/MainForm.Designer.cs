@@ -33,10 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -139,7 +139,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txt_KitapGunlukKiralamaFiyatiKitapFiyalari = new System.Windows.Forms.TextBox();
             this.txt_KitapFiyatiKitapFiyalari = new System.Windows.Forms.TextBox();
-            this.btn_findyazakoduKitaplar = new System.Windows.Forms.Button();
+            this.btn_findyazarkoduKitaplar = new System.Windows.Forms.Button();
             this.btn_findyayinevifirmakoduKitaplar = new System.Windows.Forms.Button();
             this.btn_findkitapturkoduKitaplar = new System.Windows.Forms.Button();
             this.btn_YeniKayitKitaplar_KitapFiyatlari = new System.Windows.Forms.Button();
@@ -207,6 +207,7 @@
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.checkBox_KiralamaBitisDurumuKitapKiralama = new System.Windows.Forms.CheckBox();
+            this.btn_findkitapkoduKitapKiralama = new System.Windows.Forms.Button();
             this.btn_findUkeKoduKitapKiralama = new System.Windows.Forms.Button();
             this.dtpicker_KiralamaBasTarihiKitapKiralama = new System.Windows.Forms.DateTimePicker();
             this.dtpicker_KitabıTeslimTarihiKitapKiralama = new System.Windows.Forms.DateTimePicker();
@@ -240,16 +241,16 @@
             this.lbl_KayitAraKiralama = new System.Windows.Forms.Label();
             this.mtxt_KayitAraKitapKiralama = new System.Windows.Forms.MaskedTextBox();
             this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.KiradaOlanKitaplar = new System.Windows.Forms.TabPage();
-            this.dataGridView_KiradaKitaplar = new System.Windows.Forms.DataGridView();
+            this.KiralamaTablosu = new System.Windows.Forms.TabPage();
+            this.dataGridView_KitapKiralama = new System.Windows.Forms.DataGridView();
             this.KiralanabilirKitaplar = new System.Windows.Forms.TabPage();
             this.dataGridView_KiralanabilirOlanlar = new System.Windows.Forms.DataGridView();
+            this.KiradaOlanKitaplar = new System.Windows.Forms.TabPage();
+            this.dataGridView_KiradaKitaplar = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkımızdaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.KiralamaTablosu = new System.Windows.Forms.TabPage();
-            this.dataGridView_KitapKiralama = new System.Windows.Forms.DataGridView();
+            this.menuStrip_MainForm = new System.Windows.Forms.MenuStrip();
             this.timer_datetime = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -291,14 +292,14 @@
             this.tabPage6.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabControl4.SuspendLayout();
-            this.KiradaOlanKitaplar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiradaKitaplar)).BeginInit();
-            this.KiralanabilirKitaplar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiralanabilirOlanlar)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.KiralamaTablosu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KitapKiralama)).BeginInit();
+            this.KiralanabilirKitaplar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiralanabilirOlanlar)).BeginInit();
+            this.KiradaOlanKitaplar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiradaKitaplar)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.menuStrip_MainForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -507,6 +508,7 @@
             this.btn_KayitAraKitapTurleri.TabIndex = 4;
             this.btn_KayitAraKitapTurleri.Text = "Bul";
             this.btn_KayitAraKitapTurleri.UseVisualStyleBackColor = false;
+            this.btn_KayitAraKitapTurleri.Click += new System.EventHandler(this.btn_KayitAraKitapTurleri_Click);
             // 
             // btn_KayitSilKitapTurleri
             // 
@@ -520,6 +522,7 @@
             this.btn_KayitSilKitapTurleri.TabIndex = 3;
             this.btn_KayitSilKitapTurleri.Text = "Sil";
             this.btn_KayitSilKitapTurleri.UseVisualStyleBackColor = false;
+            this.btn_KayitSilKitapTurleri.Click += new System.EventHandler(this.btn_KayitSilKitapTurleri_Click);
             // 
             // cbbox_KayitAraKitapTurleri
             // 
@@ -593,6 +596,7 @@
             this.btn_YeniKayitKitapTurleri.TabIndex = 3;
             this.btn_YeniKayitKitapTurleri.Text = "Yeni Kayıt";
             this.btn_YeniKayitKitapTurleri.UseVisualStyleBackColor = false;
+            this.btn_YeniKayitKitapTurleri.Click += new System.EventHandler(this.btn_YeniKayitKitapTurleri_Click);
             // 
             // btn_KayitGuncelleKitapTurleri
             // 
@@ -607,6 +611,7 @@
             this.btn_KayitGuncelleKitapTurleri.TabIndex = 3;
             this.btn_KayitGuncelleKitapTurleri.Text = "Güncelle";
             this.btn_KayitGuncelleKitapTurleri.UseVisualStyleBackColor = false;
+            this.btn_KayitGuncelleKitapTurleri.Click += new System.EventHandler(this.btn_KayitGuncelleKitapTurleri_Click);
             // 
             // btn_KayitEkleKitapTurleri
             // 
@@ -621,6 +626,7 @@
             this.btn_KayitEkleKitapTurleri.TabIndex = 3;
             this.btn_KayitEkleKitapTurleri.Text = "Ekle";
             this.btn_KayitEkleKitapTurleri.UseVisualStyleBackColor = false;
+            this.btn_KayitEkleKitapTurleri.Click += new System.EventHandler(this.btn_KayitEkleKitapTurleri_Click);
             // 
             // label5
             // 
@@ -644,6 +650,7 @@
             // 
             // mtxt_kturkoduKitapTurleri
             // 
+            this.mtxt_kturkoduKitapTurleri.Enabled = false;
             this.mtxt_kturkoduKitapTurleri.Location = new System.Drawing.Point(136, 42);
             this.mtxt_kturkoduKitapTurleri.Mask = "KTK-00";
             this.mtxt_kturkoduKitapTurleri.Name = "mtxt_kturkoduKitapTurleri";
@@ -673,6 +680,7 @@
             this.listView_KitapTurleri.TabIndex = 0;
             this.listView_KitapTurleri.UseCompatibleStateImageBehavior = false;
             this.listView_KitapTurleri.View = System.Windows.Forms.View.Details;
+            this.listView_KitapTurleri.SelectedIndexChanged += new System.EventHandler(this.listView_KitapTurleri_SelectedIndexChanged);
             // 
             // KitapTurKodu
             // 
@@ -724,6 +732,7 @@
             this.btn_YKayitBul.TabIndex = 4;
             this.btn_YKayitBul.Text = "Bul";
             this.btn_YKayitBul.UseVisualStyleBackColor = false;
+            this.btn_YKayitBul.Click += new System.EventHandler(this.btn_YKayitBul_Click);
             // 
             // btn_YKayitSil
             // 
@@ -736,6 +745,7 @@
             this.btn_YKayitSil.TabIndex = 3;
             this.btn_YKayitSil.Text = "Sil";
             this.btn_YKayitSil.UseVisualStyleBackColor = false;
+            this.btn_YKayitSil.Click += new System.EventHandler(this.btn_YKayitSil_Click);
             // 
             // cbbox_KayitAraYazarlar
             // 
@@ -811,6 +821,7 @@
             this.btn_YYeniKayıt.TabIndex = 3;
             this.btn_YYeniKayıt.Text = "Yeni Kayıt";
             this.btn_YYeniKayıt.UseVisualStyleBackColor = false;
+            this.btn_YYeniKayıt.Click += new System.EventHandler(this.btn_YYeniKayıt_Click);
             // 
             // btn_YKayitGuncelle
             // 
@@ -824,6 +835,7 @@
             this.btn_YKayitGuncelle.TabIndex = 3;
             this.btn_YKayitGuncelle.Text = "Güncelle";
             this.btn_YKayitGuncelle.UseVisualStyleBackColor = false;
+            this.btn_YKayitGuncelle.Click += new System.EventHandler(this.btn_YKayitGuncelle_Click);
             // 
             // btn_YKayitEkle
             // 
@@ -837,6 +849,7 @@
             this.btn_YKayitEkle.TabIndex = 3;
             this.btn_YKayitEkle.Text = "Ekle";
             this.btn_YKayitEkle.UseVisualStyleBackColor = false;
+            this.btn_YKayitEkle.Click += new System.EventHandler(this.btn_YKayitEkle_Click);
             // 
             // lbl_YazarSoyadiInfo
             // 
@@ -870,8 +883,9 @@
             // 
             // mtxt_YazarKoduYazarlar
             // 
+            this.mtxt_YazarKoduYazarlar.Enabled = false;
             this.mtxt_YazarKoduYazarlar.Location = new System.Drawing.Point(136, 42);
-            this.mtxt_YazarKoduYazarlar.Mask = "KTK-00";
+            this.mtxt_YazarKoduYazarlar.Mask = "YK-00000";
             this.mtxt_YazarKoduYazarlar.Name = "mtxt_YazarKoduYazarlar";
             this.mtxt_YazarKoduYazarlar.Size = new System.Drawing.Size(178, 22);
             this.mtxt_YazarKoduYazarlar.TabIndex = 0;
@@ -907,6 +921,7 @@
             this.listView_Yazarlar.TabIndex = 3;
             this.listView_Yazarlar.UseCompatibleStateImageBehavior = false;
             this.listView_Yazarlar.View = System.Windows.Forms.View.Details;
+            this.listView_Yazarlar.SelectedIndexChanged += new System.EventHandler(this.listView_Yazarlar_SelectedIndexChanged);
             // 
             // YazarKodu
             // 
@@ -997,6 +1012,7 @@
             this.btn_YeniKayitYayinEvleri.TabIndex = 9;
             this.btn_YeniKayitYayinEvleri.Text = "Yeni Kayıt";
             this.btn_YeniKayitYayinEvleri.UseVisualStyleBackColor = false;
+            this.btn_YeniKayitYayinEvleri.Click += new System.EventHandler(this.btn_YeniKayitYayinEvleri_Click);
             // 
             // btn_KayitGuncelleYayinEvleri
             // 
@@ -1010,6 +1026,7 @@
             this.btn_KayitGuncelleYayinEvleri.TabIndex = 10;
             this.btn_KayitGuncelleYayinEvleri.Text = "Güncelle";
             this.btn_KayitGuncelleYayinEvleri.UseVisualStyleBackColor = false;
+            this.btn_KayitGuncelleYayinEvleri.Click += new System.EventHandler(this.btn_KayitGuncelleYayinEvleri_Click);
             // 
             // btn_KayitEkleYayinEvleri
             // 
@@ -1023,6 +1040,7 @@
             this.btn_KayitEkleYayinEvleri.TabIndex = 11;
             this.btn_KayitEkleYayinEvleri.Text = "Ekle";
             this.btn_KayitEkleYayinEvleri.UseVisualStyleBackColor = false;
+            this.btn_KayitEkleYayinEvleri.Click += new System.EventHandler(this.btn_KayitEkleYayinEvleri_Click);
             // 
             // lbl_YEFirmaAdresi
             // 
@@ -1138,8 +1156,9 @@
             // 
             // mtxt_FirmaKoduYayinEvleri
             // 
+            this.mtxt_FirmaKoduYayinEvleri.Enabled = false;
             this.mtxt_FirmaKoduYayinEvleri.Location = new System.Drawing.Point(205, 6);
-            this.mtxt_FirmaKoduYayinEvleri.Mask = "KTK-00";
+            this.mtxt_FirmaKoduYayinEvleri.Mask = "YEFK-0000";
             this.mtxt_FirmaKoduYayinEvleri.Name = "mtxt_FirmaKoduYayinEvleri";
             this.mtxt_FirmaKoduYayinEvleri.Size = new System.Drawing.Size(244, 22);
             this.mtxt_FirmaKoduYayinEvleri.TabIndex = 3;
@@ -1215,6 +1234,7 @@
             this.btn_KayitAraYayinEvleri.TabIndex = 4;
             this.btn_KayitAraYayinEvleri.Text = "Bul";
             this.btn_KayitAraYayinEvleri.UseVisualStyleBackColor = false;
+            this.btn_KayitAraYayinEvleri.Click += new System.EventHandler(this.btn_KayitAraYayinEvleri_Click);
             // 
             // btn_KayitSilYayinEvleri
             // 
@@ -1227,6 +1247,7 @@
             this.btn_KayitSilYayinEvleri.TabIndex = 3;
             this.btn_KayitSilYayinEvleri.Text = "Sil";
             this.btn_KayitSilYayinEvleri.UseVisualStyleBackColor = false;
+            this.btn_KayitSilYayinEvleri.Click += new System.EventHandler(this.btn_KayitSilYayinEvleri_Click);
             // 
             // cbbox_KayitAraYayinEvleri
             // 
@@ -1273,17 +1294,21 @@
             // 
             // dataGridView_YayinEvleri
             // 
+            this.dataGridView_YayinEvleri.AllowUserToAddRows = false;
+            this.dataGridView_YayinEvleri.AllowUserToDeleteRows = false;
             this.dataGridView_YayinEvleri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_YayinEvleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_YayinEvleri.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView_YayinEvleri.Location = new System.Drawing.Point(3, 18);
             this.dataGridView_YayinEvleri.Name = "dataGridView_YayinEvleri";
+            this.dataGridView_YayinEvleri.ReadOnly = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dataGridView_YayinEvleri.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_YayinEvleri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_YayinEvleri.Size = new System.Drawing.Size(1025, 187);
             this.dataGridView_YayinEvleri.TabIndex = 0;
+            this.dataGridView_YayinEvleri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_YayinEvleri_CellClick);
             // 
             // Kitaplar
             // 
@@ -1329,7 +1354,7 @@
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.txt_KitapGunlukKiralamaFiyatiKitapFiyalari);
             this.tabPage1.Controls.Add(this.txt_KitapFiyatiKitapFiyalari);
-            this.tabPage1.Controls.Add(this.btn_findyazakoduKitaplar);
+            this.tabPage1.Controls.Add(this.btn_findyazarkoduKitaplar);
             this.tabPage1.Controls.Add(this.btn_findyayinevifirmakoduKitaplar);
             this.tabPage1.Controls.Add(this.btn_findkitapturkoduKitaplar);
             this.tabPage1.Controls.Add(this.btn_YeniKayitKitaplar_KitapFiyatlari);
@@ -1374,6 +1399,7 @@
             this.btn_findkitapdilkoduKitaplar.Size = new System.Drawing.Size(34, 23);
             this.btn_findkitapdilkoduKitaplar.TabIndex = 21;
             this.btn_findkitapdilkoduKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findkitapdilkoduKitaplar.Click += new System.EventHandler(this.btn_findkitapdilkoduKitaplar_Click);
             // 
             // label19
             // 
@@ -1429,15 +1455,16 @@
             this.txt_KitapFiyatiKitapFiyalari.Size = new System.Drawing.Size(244, 22);
             this.txt_KitapFiyatiKitapFiyalari.TabIndex = 14;
             // 
-            // btn_findyazakoduKitaplar
+            // btn_findyazarkoduKitaplar
             // 
-            this.btn_findyazakoduKitaplar.BackgroundImage = global::KutuphaneBilgiSistemi.Properties.Resources.find_img;
-            this.btn_findyazakoduKitaplar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_findyazakoduKitaplar.Location = new System.Drawing.Point(415, 121);
-            this.btn_findyazakoduKitaplar.Name = "btn_findyazakoduKitaplar";
-            this.btn_findyazakoduKitaplar.Size = new System.Drawing.Size(34, 23);
-            this.btn_findyazakoduKitaplar.TabIndex = 12;
-            this.btn_findyazakoduKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findyazarkoduKitaplar.BackgroundImage = global::KutuphaneBilgiSistemi.Properties.Resources.find_img;
+            this.btn_findyazarkoduKitaplar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_findyazarkoduKitaplar.Location = new System.Drawing.Point(415, 121);
+            this.btn_findyazarkoduKitaplar.Name = "btn_findyazarkoduKitaplar";
+            this.btn_findyazarkoduKitaplar.Size = new System.Drawing.Size(34, 23);
+            this.btn_findyazarkoduKitaplar.TabIndex = 12;
+            this.btn_findyazarkoduKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findyazarkoduKitaplar.Click += new System.EventHandler(this.btn_findyazarkoduKitaplar_Click);
             // 
             // btn_findyayinevifirmakoduKitaplar
             // 
@@ -1448,6 +1475,7 @@
             this.btn_findyayinevifirmakoduKitaplar.Size = new System.Drawing.Size(34, 23);
             this.btn_findyayinevifirmakoduKitaplar.TabIndex = 12;
             this.btn_findyayinevifirmakoduKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findyayinevifirmakoduKitaplar.Click += new System.EventHandler(this.btn_findyayinevifirmakoduKitaplar_Click);
             // 
             // btn_findkitapturkoduKitaplar
             // 
@@ -1458,6 +1486,7 @@
             this.btn_findkitapturkoduKitaplar.Size = new System.Drawing.Size(34, 23);
             this.btn_findkitapturkoduKitaplar.TabIndex = 12;
             this.btn_findkitapturkoduKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findkitapturkoduKitaplar.Click += new System.EventHandler(this.btn_findkitapturkoduKitaplar_Click);
             // 
             // btn_YeniKayitKitaplar_KitapFiyatlari
             // 
@@ -1465,12 +1494,13 @@
             this.btn_YeniKayitKitaplar_KitapFiyatlari.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_YeniKayitKitaplar_KitapFiyatlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_YeniKayitKitaplar_KitapFiyatlari.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_YeniKayitKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(659, 161);
+            this.btn_YeniKayitKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(654, 157);
             this.btn_YeniKayitKitaplar_KitapFiyatlari.Name = "btn_YeniKayitKitaplar_KitapFiyatlari";
             this.btn_YeniKayitKitaplar_KitapFiyatlari.Size = new System.Drawing.Size(118, 60);
             this.btn_YeniKayitKitaplar_KitapFiyatlari.TabIndex = 9;
             this.btn_YeniKayitKitaplar_KitapFiyatlari.Text = "Yeni Kayıt";
             this.btn_YeniKayitKitaplar_KitapFiyatlari.UseVisualStyleBackColor = false;
+            this.btn_YeniKayitKitaplar_KitapFiyatlari.Click += new System.EventHandler(this.btn_YeniKayitKitaplar_KitapFiyatlari_Click);
             // 
             // btn_KayitGuncelleKitaplar_KitapFiyatlari
             // 
@@ -1478,12 +1508,13 @@
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(777, 161);
+            this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(772, 157);
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Name = "btn_KayitGuncelleKitaplar_KitapFiyatlari";
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Size = new System.Drawing.Size(118, 60);
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.TabIndex = 10;
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Text = "Güncelle";
             this.btn_KayitGuncelleKitaplar_KitapFiyatlari.UseVisualStyleBackColor = false;
+            this.btn_KayitGuncelleKitaplar_KitapFiyatlari.Click += new System.EventHandler(this.btn_KayitGuncelleKitaplar_KitapFiyatlari_Click);
             // 
             // btn_KayitEkleKitaplar_KitapFiyatlari
             // 
@@ -1491,12 +1522,13 @@
             this.btn_KayitEkleKitaplar_KitapFiyatlari.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_KayitEkleKitaplar_KitapFiyatlari.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_KayitEkleKitaplar_KitapFiyatlari.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_KayitEkleKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(895, 161);
+            this.btn_KayitEkleKitaplar_KitapFiyatlari.Location = new System.Drawing.Point(890, 157);
             this.btn_KayitEkleKitaplar_KitapFiyatlari.Name = "btn_KayitEkleKitaplar_KitapFiyatlari";
             this.btn_KayitEkleKitaplar_KitapFiyatlari.Size = new System.Drawing.Size(118, 60);
             this.btn_KayitEkleKitaplar_KitapFiyatlari.TabIndex = 11;
             this.btn_KayitEkleKitaplar_KitapFiyatlari.Text = "Ekle";
             this.btn_KayitEkleKitaplar_KitapFiyatlari.UseVisualStyleBackColor = false;
+            this.btn_KayitEkleKitaplar_KitapFiyatlari.Click += new System.EventHandler(this.btn_KayitEkleKitaplar_KitapFiyatlari_Click);
             // 
             // label9
             // 
@@ -1570,6 +1602,7 @@
             // 
             // mtxt_KitapDilKoduKitaplar
             // 
+            this.mtxt_KitapDilKoduKitaplar.Enabled = false;
             this.mtxt_KitapDilKoduKitaplar.Location = new System.Drawing.Point(659, 34);
             this.mtxt_KitapDilKoduKitaplar.Mask = "0";
             this.mtxt_KitapDilKoduKitaplar.Name = "mtxt_KitapDilKoduKitaplar";
@@ -1578,6 +1611,7 @@
             // 
             // mtxt_kitapYayinEviFirmaKoduKitaplar
             // 
+            this.mtxt_kitapYayinEviFirmaKoduKitaplar.Enabled = false;
             this.mtxt_kitapYayinEviFirmaKoduKitaplar.Location = new System.Drawing.Point(205, 178);
             this.mtxt_kitapYayinEviFirmaKoduKitaplar.Mask = "YEFK-0000";
             this.mtxt_kitapYayinEviFirmaKoduKitaplar.Name = "mtxt_kitapYayinEviFirmaKoduKitaplar";
@@ -1586,6 +1620,7 @@
             // 
             // mtxt_kitapYazarKoduKitaplar
             // 
+            this.mtxt_kitapYazarKoduKitaplar.Enabled = false;
             this.mtxt_kitapYazarKoduKitaplar.Location = new System.Drawing.Point(205, 122);
             this.mtxt_kitapYazarKoduKitaplar.Mask = "YK-00000";
             this.mtxt_kitapYazarKoduKitaplar.Name = "mtxt_kitapYazarKoduKitaplar";
@@ -1594,6 +1629,7 @@
             // 
             // mtxt_kitapTurKoduKitaplar
             // 
+            this.mtxt_kitapTurKoduKitaplar.Enabled = false;
             this.mtxt_kitapTurKoduKitaplar.Location = new System.Drawing.Point(205, 94);
             this.mtxt_kitapTurKoduKitaplar.Mask = "KTK-00";
             this.mtxt_kitapTurKoduKitaplar.Name = "mtxt_kitapTurKoduKitaplar";
@@ -1602,8 +1638,8 @@
             // 
             // mtxt_kitapKoduKitaplar
             // 
+            this.mtxt_kitapKoduKitaplar.Enabled = false;
             this.mtxt_kitapKoduKitaplar.Location = new System.Drawing.Point(205, 6);
-            this.mtxt_kitapKoduKitaplar.Mask = "KTK-00";
             this.mtxt_kitapKoduKitaplar.Name = "mtxt_kitapKoduKitaplar";
             this.mtxt_kitapKoduKitaplar.Size = new System.Drawing.Size(244, 22);
             this.mtxt_kitapKoduKitaplar.TabIndex = 3;
@@ -1678,6 +1714,7 @@
             this.btn_findkodKitaplar.Size = new System.Drawing.Size(34, 23);
             this.btn_findkodKitaplar.TabIndex = 13;
             this.btn_findkodKitaplar.UseVisualStyleBackColor = true;
+            this.btn_findkodKitaplar.Click += new System.EventHandler(this.btn_findkodKitaplar_Click);
             // 
             // btn_KayitBulKitaplar_KitapFiyatlari
             // 
@@ -1690,6 +1727,7 @@
             this.btn_KayitBulKitaplar_KitapFiyatlari.TabIndex = 4;
             this.btn_KayitBulKitaplar_KitapFiyatlari.Text = "Bul";
             this.btn_KayitBulKitaplar_KitapFiyatlari.UseVisualStyleBackColor = false;
+            this.btn_KayitBulKitaplar_KitapFiyatlari.Click += new System.EventHandler(this.btn_KayitBulKitaplar_KitapFiyatlari_Click);
             // 
             // btn_KayitSilKitaplar_KitapFiyatlari
             // 
@@ -1702,6 +1740,7 @@
             this.btn_KayitSilKitaplar_KitapFiyatlari.TabIndex = 3;
             this.btn_KayitSilKitaplar_KitapFiyatlari.Text = "Sil";
             this.btn_KayitSilKitaplar_KitapFiyatlari.UseVisualStyleBackColor = false;
+            this.btn_KayitSilKitaplar_KitapFiyatlari.Click += new System.EventHandler(this.btn_KayitSilKitaplar_KitapFiyatlari_Click);
             // 
             // cbbox_KayitAraKitaplar
             // 
@@ -1751,17 +1790,21 @@
             // 
             // dataGridView_Kitaplar
             // 
+            this.dataGridView_Kitaplar.AllowUserToAddRows = false;
+            this.dataGridView_Kitaplar.AllowUserToDeleteRows = false;
             this.dataGridView_Kitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Kitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Kitaplar.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView_Kitaplar.Location = new System.Drawing.Point(3, 18);
             this.dataGridView_Kitaplar.Name = "dataGridView_Kitaplar";
+            this.dataGridView_Kitaplar.ReadOnly = true;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             this.dataGridView_Kitaplar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Kitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Kitaplar.Size = new System.Drawing.Size(1019, 187);
             this.dataGridView_Kitaplar.TabIndex = 0;
+            this.dataGridView_Kitaplar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Kitaplar_CellClick);
             // 
             // Uyeler
             // 
@@ -1888,6 +1931,7 @@
             this.btn_YeniKayitUyeler.TabIndex = 9;
             this.btn_YeniKayitUyeler.Text = "Yeni Kayıt";
             this.btn_YeniKayitUyeler.UseVisualStyleBackColor = false;
+            this.btn_YeniKayitUyeler.Click += new System.EventHandler(this.btn_YeniKayitUyeler_Click);
             // 
             // btn_KayitGuncelleUyeler
             // 
@@ -1901,6 +1945,7 @@
             this.btn_KayitGuncelleUyeler.TabIndex = 10;
             this.btn_KayitGuncelleUyeler.Text = "Güncelle";
             this.btn_KayitGuncelleUyeler.UseVisualStyleBackColor = false;
+            this.btn_KayitGuncelleUyeler.Click += new System.EventHandler(this.btn_KayitGuncelleUyeler_Click);
             // 
             // btn_KayitEkleUyeler
             // 
@@ -1914,6 +1959,7 @@
             this.btn_KayitEkleUyeler.TabIndex = 11;
             this.btn_KayitEkleUyeler.Text = "Ekle";
             this.btn_KayitEkleUyeler.UseVisualStyleBackColor = false;
+            this.btn_KayitEkleUyeler.Click += new System.EventHandler(this.btn_KayitEkleUyeler_Click);
             // 
             // label28
             // 
@@ -1975,6 +2021,7 @@
             // 
             // mtxt_UyeKoduUyeler
             // 
+            this.mtxt_UyeKoduUyeler.Enabled = false;
             this.mtxt_UyeKoduUyeler.Location = new System.Drawing.Point(205, 6);
             this.mtxt_UyeKoduUyeler.Mask = "UK-00000";
             this.mtxt_UyeKoduUyeler.Name = "mtxt_UyeKoduUyeler";
@@ -2045,6 +2092,7 @@
             this.btn_KayitAraUyeler.TabIndex = 4;
             this.btn_KayitAraUyeler.Text = "Bul";
             this.btn_KayitAraUyeler.UseVisualStyleBackColor = false;
+            this.btn_KayitAraUyeler.Click += new System.EventHandler(this.btn_KayitAraUyeler_Click);
             // 
             // btnKayitSilUyeler
             // 
@@ -2057,6 +2105,7 @@
             this.btnKayitSilUyeler.TabIndex = 3;
             this.btnKayitSilUyeler.Text = "Sil";
             this.btnKayitSilUyeler.UseVisualStyleBackColor = false;
+            this.btnKayitSilUyeler.Click += new System.EventHandler(this.btnKayitSilUyeler_Click);
             // 
             // cbbox_KayitAraUyeler
             // 
@@ -2103,12 +2152,14 @@
             // 
             // dataGridView_Uyeler
             // 
+            this.dataGridView_Uyeler.AllowUserToAddRows = false;
+            this.dataGridView_Uyeler.AllowUserToDeleteRows = false;
             this.dataGridView_Uyeler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Uyeler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -2116,12 +2167,14 @@
             this.dataGridView_Uyeler.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView_Uyeler.Location = new System.Drawing.Point(3, 18);
             this.dataGridView_Uyeler.Name = "dataGridView_Uyeler";
+            this.dataGridView_Uyeler.ReadOnly = true;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dataGridView_Uyeler.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_Uyeler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_Uyeler.Size = new System.Drawing.Size(1025, 187);
             this.dataGridView_Uyeler.TabIndex = 0;
+            this.dataGridView_Uyeler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Uyeler_CellClick);
             // 
             // KitapKiralama
             // 
@@ -2148,6 +2201,7 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.checkBox_KiralamaBitisDurumuKitapKiralama);
+            this.tabPage5.Controls.Add(this.btn_findkitapkoduKitapKiralama);
             this.tabPage5.Controls.Add(this.btn_findUkeKoduKitapKiralama);
             this.tabPage5.Controls.Add(this.dtpicker_KiralamaBasTarihiKitapKiralama);
             this.tabPage5.Controls.Add(this.dtpicker_KitabıTeslimTarihiKitapKiralama);
@@ -2189,6 +2243,17 @@
             this.checkBox_KiralamaBitisDurumuKitapKiralama.Text = "Kitap Teslim Edildi";
             this.checkBox_KiralamaBitisDurumuKitapKiralama.UseVisualStyleBackColor = true;
             // 
+            // btn_findkitapkoduKitapKiralama
+            // 
+            this.btn_findkitapkoduKitapKiralama.BackgroundImage = global::KutuphaneBilgiSistemi.Properties.Resources.find_img;
+            this.btn_findkitapkoduKitapKiralama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_findkitapkoduKitapKiralama.Location = new System.Drawing.Point(415, 37);
+            this.btn_findkitapkoduKitapKiralama.Name = "btn_findkitapkoduKitapKiralama";
+            this.btn_findkitapkoduKitapKiralama.Size = new System.Drawing.Size(34, 23);
+            this.btn_findkitapkoduKitapKiralama.TabIndex = 22;
+            this.btn_findkitapkoduKitapKiralama.UseVisualStyleBackColor = true;
+            this.btn_findkitapkoduKitapKiralama.Click += new System.EventHandler(this.btn_findkitapkoduKitapKiralama_Click);
+            // 
             // btn_findUkeKoduKitapKiralama
             // 
             this.btn_findUkeKoduKitapKiralama.BackgroundImage = global::KutuphaneBilgiSistemi.Properties.Resources.find_img;
@@ -2198,6 +2263,7 @@
             this.btn_findUkeKoduKitapKiralama.Size = new System.Drawing.Size(34, 23);
             this.btn_findUkeKoduKitapKiralama.TabIndex = 22;
             this.btn_findUkeKoduKitapKiralama.UseVisualStyleBackColor = true;
+            this.btn_findUkeKoduKitapKiralama.Click += new System.EventHandler(this.btn_findUkeKoduKitapKiralama_Click);
             // 
             // dtpicker_KiralamaBasTarihiKitapKiralama
             // 
@@ -2282,6 +2348,7 @@
             this.btn_YeniKayitKitapKiralama.TabIndex = 9;
             this.btn_YeniKayitKitapKiralama.Text = "Yeni Kayıt";
             this.btn_YeniKayitKitapKiralama.UseVisualStyleBackColor = false;
+            this.btn_YeniKayitKitapKiralama.Click += new System.EventHandler(this.btn_YeniKayitKitapKiralama_Click);
             // 
             // btn_KayitGuncellemeKitapKiralama
             // 
@@ -2295,6 +2362,7 @@
             this.btn_KayitGuncellemeKitapKiralama.TabIndex = 10;
             this.btn_KayitGuncellemeKitapKiralama.Text = "Güncelle";
             this.btn_KayitGuncellemeKitapKiralama.UseVisualStyleBackColor = false;
+            this.btn_KayitGuncellemeKitapKiralama.Click += new System.EventHandler(this.btn_KayitGuncellemeKitapKiralama_Click);
             // 
             // btn_KayitEkleKitapKiralama
             // 
@@ -2308,6 +2376,7 @@
             this.btn_KayitEkleKitapKiralama.TabIndex = 11;
             this.btn_KayitEkleKitapKiralama.Text = "Ekle";
             this.btn_KayitEkleKitapKiralama.UseVisualStyleBackColor = false;
+            this.btn_KayitEkleKitapKiralama.Click += new System.EventHandler(this.btn_KayitEkleKitapKiralama_Click);
             // 
             // label34
             // 
@@ -2361,6 +2430,7 @@
             // 
             // mtxt_KiralamaUyeKoduKitapKiralama
             // 
+            this.mtxt_KiralamaUyeKoduKitapKiralama.Enabled = false;
             this.mtxt_KiralamaUyeKoduKitapKiralama.Location = new System.Drawing.Point(659, 6);
             this.mtxt_KiralamaUyeKoduKitapKiralama.Mask = "UK-00000";
             this.mtxt_KiralamaUyeKoduKitapKiralama.Name = "mtxt_KiralamaUyeKoduKitapKiralama";
@@ -2369,6 +2439,7 @@
             // 
             // mtxt_KiralamaKoduKitapKiralama
             // 
+            this.mtxt_KiralamaKoduKitapKiralama.Enabled = false;
             this.mtxt_KiralamaKoduKitapKiralama.Location = new System.Drawing.Point(205, 6);
             this.mtxt_KiralamaKoduKitapKiralama.Mask = "KK-0000000";
             this.mtxt_KiralamaKoduKitapKiralama.Name = "mtxt_KiralamaKoduKitapKiralama";
@@ -2392,9 +2463,10 @@
             // 
             // txt_KitapKoduKitapKiralama
             // 
+            this.txt_KitapKoduKitapKiralama.Enabled = false;
             this.txt_KitapKoduKitapKiralama.Location = new System.Drawing.Point(205, 37);
             this.txt_KitapKoduKitapKiralama.Name = "txt_KitapKoduKitapKiralama";
-            this.txt_KitapKoduKitapKiralama.Size = new System.Drawing.Size(244, 22);
+            this.txt_KitapKoduKitapKiralama.Size = new System.Drawing.Size(213, 22);
             this.txt_KitapKoduKitapKiralama.TabIndex = 5;
             // 
             // tabPage6
@@ -2435,6 +2507,7 @@
             this.btn_findkodKitapKiralama.Size = new System.Drawing.Size(34, 23);
             this.btn_findkodKitapKiralama.TabIndex = 16;
             this.btn_findkodKitapKiralama.UseVisualStyleBackColor = true;
+            this.btn_findkodKitapKiralama.Click += new System.EventHandler(this.btn_findkodKitapKiralama_Click);
             // 
             // label39
             // 
@@ -2458,6 +2531,7 @@
             this.btn_KayitBulKitapKiralama.TabIndex = 4;
             this.btn_KayitBulKitapKiralama.Text = "Bul";
             this.btn_KayitBulKitapKiralama.UseVisualStyleBackColor = false;
+            this.btn_KayitBulKitapKiralama.Click += new System.EventHandler(this.btn_KayitBulKitapKiralama_Click);
             // 
             // btn_silKitapKiralama
             // 
@@ -2470,6 +2544,7 @@
             this.btn_silKitapKiralama.TabIndex = 3;
             this.btn_silKitapKiralama.Text = "Sil";
             this.btn_silKitapKiralama.UseVisualStyleBackColor = false;
+            this.btn_silKitapKiralama.Click += new System.EventHandler(this.btn_silKitapKiralama_Click);
             // 
             // cbbox_KayitAraKitapKiralama
             // 
@@ -2515,9 +2590,9 @@
             // 
             // tabControl4
             // 
+            this.tabControl4.Controls.Add(this.KiralamaTablosu);
             this.tabControl4.Controls.Add(this.KiralanabilirKitaplar);
             this.tabControl4.Controls.Add(this.KiradaOlanKitaplar);
-            this.tabControl4.Controls.Add(this.KiralamaTablosu);
             this.tabControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl4.Location = new System.Drawing.Point(0, 0);
             this.tabControl4.Name = "tabControl4";
@@ -2525,41 +2600,41 @@
             this.tabControl4.Size = new System.Drawing.Size(1031, 198);
             this.tabControl4.TabIndex = 0;
             // 
-            // KiradaOlanKitaplar
+            // KiralamaTablosu
             // 
-            this.KiradaOlanKitaplar.Controls.Add(this.dataGridView_KiradaKitaplar);
-            this.KiradaOlanKitaplar.Location = new System.Drawing.Point(4, 25);
-            this.KiradaOlanKitaplar.Name = "KiradaOlanKitaplar";
-            this.KiradaOlanKitaplar.Padding = new System.Windows.Forms.Padding(3);
-            this.KiradaOlanKitaplar.Size = new System.Drawing.Size(1023, 169);
-            this.KiradaOlanKitaplar.TabIndex = 0;
-            this.KiradaOlanKitaplar.Text = "Suan Kirada Olan Kitaplar";
-            this.KiradaOlanKitaplar.UseVisualStyleBackColor = true;
+            this.KiralamaTablosu.Controls.Add(this.dataGridView_KitapKiralama);
+            this.KiralamaTablosu.Location = new System.Drawing.Point(4, 25);
+            this.KiralamaTablosu.Name = "KiralamaTablosu";
+            this.KiralamaTablosu.Size = new System.Drawing.Size(1023, 169);
+            this.KiralamaTablosu.TabIndex = 2;
+            this.KiralamaTablosu.Text = "Kiralama Tablosu";
+            this.KiralamaTablosu.UseVisualStyleBackColor = true;
             // 
-            // dataGridView_KiradaKitaplar
+            // dataGridView_KitapKiralama
             // 
-            this.dataGridView_KiradaKitaplar.AllowUserToAddRows = false;
-            this.dataGridView_KiradaKitaplar.AllowUserToDeleteRows = false;
-            this.dataGridView_KiradaKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_KiradaKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_KiradaKitaplar.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView_KiradaKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_KiradaKitaplar.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView_KiradaKitaplar.Name = "dataGridView_KiradaKitaplar";
-            this.dataGridView_KiradaKitaplar.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_KiradaKitaplar.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView_KiradaKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_KiradaKitaplar.Size = new System.Drawing.Size(1017, 163);
-            this.dataGridView_KiradaKitaplar.TabIndex = 1;
+            this.dataGridView_KitapKiralama.AllowUserToAddRows = false;
+            this.dataGridView_KitapKiralama.AllowUserToDeleteRows = false;
+            this.dataGridView_KitapKiralama.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_KitapKiralama.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_KitapKiralama.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_KitapKiralama.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_KitapKiralama.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_KitapKiralama.Name = "dataGridView_KitapKiralama";
+            this.dataGridView_KitapKiralama.ReadOnly = true;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_KitapKiralama.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView_KitapKiralama.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_KitapKiralama.Size = new System.Drawing.Size(1023, 169);
+            this.dataGridView_KitapKiralama.TabIndex = 2;
+            this.dataGridView_KitapKiralama.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KitapKiralama_CellClick);
             // 
             // KiralanabilirKitaplar
             // 
@@ -2578,24 +2653,60 @@
             this.dataGridView_KiralanabilirOlanlar.AllowUserToDeleteRows = false;
             this.dataGridView_KiralanabilirOlanlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_KiralanabilirOlanlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_KiralanabilirOlanlar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_KiralanabilirOlanlar.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_KiralanabilirOlanlar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_KiralanabilirOlanlar.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_KiralanabilirOlanlar.Name = "dataGridView_KiralanabilirOlanlar";
             this.dataGridView_KiralanabilirOlanlar.ReadOnly = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_KiralanabilirOlanlar.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_KiralanabilirOlanlar.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_KiralanabilirOlanlar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_KiralanabilirOlanlar.Size = new System.Drawing.Size(1017, 163);
             this.dataGridView_KiralanabilirOlanlar.TabIndex = 0;
+            // 
+            // KiradaOlanKitaplar
+            // 
+            this.KiradaOlanKitaplar.Controls.Add(this.dataGridView_KiradaKitaplar);
+            this.KiradaOlanKitaplar.Location = new System.Drawing.Point(4, 25);
+            this.KiradaOlanKitaplar.Name = "KiradaOlanKitaplar";
+            this.KiradaOlanKitaplar.Padding = new System.Windows.Forms.Padding(3);
+            this.KiradaOlanKitaplar.Size = new System.Drawing.Size(1023, 169);
+            this.KiradaOlanKitaplar.TabIndex = 0;
+            this.KiradaOlanKitaplar.Text = "Suan Kirada Olan Kitaplar";
+            this.KiradaOlanKitaplar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_KiradaKitaplar
+            // 
+            this.dataGridView_KiradaKitaplar.AllowUserToAddRows = false;
+            this.dataGridView_KiradaKitaplar.AllowUserToDeleteRows = false;
+            this.dataGridView_KiradaKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_KiradaKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_KiradaKitaplar.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView_KiradaKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_KiradaKitaplar.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_KiradaKitaplar.Name = "dataGridView_KiradaKitaplar";
+            this.dataGridView_KiradaKitaplar.ReadOnly = true;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_KiradaKitaplar.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView_KiradaKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_KiradaKitaplar.Size = new System.Drawing.Size(1017, 163);
+            this.dataGridView_KiradaKitaplar.TabIndex = 1;
             // 
             // groupBox6
             // 
@@ -2623,52 +2734,16 @@
             this.hakkımızdaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.hakkımızdaToolStripMenuItem.Text = "Hakkımızda";
             // 
-            // menuStrip1
+            // menuStrip_MainForm
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip_MainForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dosyaToolStripMenuItem,
             this.hakkımızdaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1045, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // KiralamaTablosu
-            // 
-            this.KiralamaTablosu.Controls.Add(this.dataGridView_KitapKiralama);
-            this.KiralamaTablosu.Location = new System.Drawing.Point(4, 25);
-            this.KiralamaTablosu.Name = "KiralamaTablosu";
-            this.KiralamaTablosu.Size = new System.Drawing.Size(1023, 169);
-            this.KiralamaTablosu.TabIndex = 2;
-            this.KiralamaTablosu.Text = "Kiralama Tablosu";
-            this.KiralamaTablosu.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_KitapKiralama
-            // 
-            this.dataGridView_KitapKiralama.AllowUserToAddRows = false;
-            this.dataGridView_KitapKiralama.AllowUserToDeleteRows = false;
-            this.dataGridView_KitapKiralama.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_KitapKiralama.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_KitapKiralama.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView_KitapKiralama.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_KitapKiralama.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_KitapKiralama.Name = "dataGridView_KitapKiralama";
-            this.dataGridView_KitapKiralama.ReadOnly = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView_KitapKiralama.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView_KitapKiralama.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_KitapKiralama.Size = new System.Drawing.Size(1023, 169);
-            this.dataGridView_KitapKiralama.TabIndex = 2;
-            this.dataGridView_KitapKiralama.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KitapKiralama_CellClick);
+            this.menuStrip_MainForm.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_MainForm.Name = "menuStrip_MainForm";
+            this.menuStrip_MainForm.Size = new System.Drawing.Size(1045, 24);
+            this.menuStrip_MainForm.TabIndex = 4;
+            this.menuStrip_MainForm.Text = "menuStrip1";
             // 
             // timer_datetime
             // 
@@ -2683,13 +2758,14 @@
             this.ClientSize = new System.Drawing.Size(1045, 590);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip_MainForm);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip_MainForm;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KÜTÜPHANE BİLGİ SİSTEMİ - ANA EKRAN";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -2746,15 +2822,15 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabControl4.ResumeLayout(false);
-            this.KiradaOlanKitaplar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiradaKitaplar)).EndInit();
-            this.KiralanabilirKitaplar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiralanabilirOlanlar)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.KiralamaTablosu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KitapKiralama)).EndInit();
+            this.KiralanabilirKitaplar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiralanabilirOlanlar)).EndInit();
+            this.KiradaOlanKitaplar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_KiradaKitaplar)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.menuStrip_MainForm.ResumeLayout(false);
+            this.menuStrip_MainForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2800,7 +2876,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hakkımızdaToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip_MainForm;
         private System.Windows.Forms.MaskedTextBox mtxt_kturkoduKitapTurleri;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ComboBox cbbox_KayitAraYazarlar;
@@ -2882,7 +2958,7 @@
         private System.Windows.Forms.Label lbl_KayitAraKitaplar;
         private System.Windows.Forms.MaskedTextBox mtxt_KayitAraKitaplar;
         private System.Windows.Forms.DataGridView dataGridView_Kitaplar;
-        private System.Windows.Forms.Button btn_findyazakoduKitaplar;
+        private System.Windows.Forms.Button btn_findyazarkoduKitaplar;
         private System.Windows.Forms.Button btn_findyayinevifirmakoduKitaplar;
         private System.Windows.Forms.Button btn_findkitapturkoduKitaplar;
         private System.Windows.Forms.Button btn_findkitapdilkoduKitaplar;
@@ -2974,5 +3050,6 @@
         private System.Windows.Forms.TabPage KiralamaTablosu;
         private System.Windows.Forms.DataGridView dataGridView_KitapKiralama;
         private System.Windows.Forms.Timer timer_datetime;
+        private System.Windows.Forms.Button btn_findkitapkoduKitapKiralama;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Kitaplar
+    public class Kitaplar
     {
         public int KitapID { get; set; }
         public Guid KitapKodu { get; set; }

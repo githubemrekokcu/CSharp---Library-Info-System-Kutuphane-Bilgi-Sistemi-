@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace KutuphaneBilgiSistemi
 {
     public partial class LoginForm : Form
     {
+        BLL bll;
         public LoginForm()
         {
             InitializeComponent();
+            bll = new BLL();
         }
 
 
@@ -35,5 +38,19 @@ namespace KutuphaneBilgiSistemi
             Environment.Exit(0);
         }
 
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            int LoginControlDurumKodu = bll.LooginControl(txt_username.Text, txt_password.Text);
+            if (LoginControlDurumKodu == -1 | LoginControlDurumKodu == 0)
+            {
+                MessageBox.Show("Kullanıcı Adınız ve/veya Şifreniz Hatalıdır. Lüften Kontrol Ediniz!!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Hide();
+                MainForm mF = new MainForm();
+                mF.Show();
+            }
+        }
     }
 }

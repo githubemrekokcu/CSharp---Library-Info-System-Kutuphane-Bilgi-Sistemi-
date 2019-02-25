@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Kiralama
+    public class Kiralama
     {
         public int KiralamaID { get; set; }
         public string KiralamaKodu { get; set; }

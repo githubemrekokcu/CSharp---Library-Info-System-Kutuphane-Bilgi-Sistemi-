@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class KitapFiyatlari
+    public class KitapFiyatlari
     {
         public Guid KitapFiyatlariKitapKodu { get; set; }
         public decimal KitapFiyati { get; set; }

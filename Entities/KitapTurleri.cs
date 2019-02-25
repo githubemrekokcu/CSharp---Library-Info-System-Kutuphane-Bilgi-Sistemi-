@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class KitapTurleri
+    public class KitapTurleri
     {
         public int KitapTurID { get; set; }
         public string KitapTurKodu { get; set; }

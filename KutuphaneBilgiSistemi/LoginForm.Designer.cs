@@ -95,6 +95,7 @@
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Giriş Yap";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // label2
             // 
@@ -174,7 +175,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
